@@ -6,7 +6,8 @@
   "scripts": {
     "cz": "git-cz",
     "dev": "parcel ./src/index.html",
-    "build": "parcel build ./src/index.html"
+    "build": "parcel build ./src/index.html --experimental-scope-hoisting --no-cache --no-source-maps",
+    "postbuild": "workbox generateSW"
   },
   "dependencies": {
     "react": "^16.13.1",
@@ -24,11 +25,29 @@
     "commitizen": "*",
     "cz-conventional-changelog": "*",
     "parcel-bundler": "^1.12.4",
-    "src": "^1.1.2"
+    "parcel-plugin-bundle-visualiser": "^1.2.0",
+    "parcel-plugin-pwa-manifest": "^2.9.2",
+    "src": "^1.1.2",
+    "workbox-cli": "^5.1.2"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "pwaManifest": {
+    "name": "About Me",
+    "shortName": "About me",
+    "startURL": "./public",
+    "theme": "#add8e6",
+    "generateIconOptions": {
+      "baseIcon": "./assets/favicon.svg",
+      "sizes": [
+        192,
+        384,
+        512
+      ],
+      "genFavicons": true
     }
   }
 }
