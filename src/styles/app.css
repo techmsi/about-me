@@ -1,3 +1,63 @@
+:root {
+  --brand-gold: rgb(248, 207, 24);
+}
+*:focus {
+  outline-color: var(--brand-gold);
+  transition: none;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+html {
+  font-size: 100%;
+}
+
 body {
-  font-family: monospace;
+  font-family: 'Bad Script', sans-serif;
+  background-color: #fff;
+  font-size: 1.2rem;
+  background-image: radial-gradient(#eeeff0, #b7b9ab);
+}
+h1 {
+  font-size: 2.6rem;
+}
+#root {
+  padding: 1rem;
+  text-align: center;
+}
+
+.center {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 6rem;
+}
+
+.btn-menu {
+  box-shadow: #fff 4px 0 20px;
+  position: absolute;
+  line-height: 0;
+  background: var(--brand-gold);
+  font-family: Impact, sans-serif;
+  font-size: 5rem;
+  transition: 0.7s;
+  z-index: 1000;
+  border-radius: 50%;
+  width: 6rem;
+  height: 6rem;
+  transform: rotate(0deg);
+}
+
+.btn-menu.open {
+  transform: rotate(45deg);
+  transition: 0.7s;
 }

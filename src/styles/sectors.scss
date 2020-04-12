@@ -1,0 +1,76 @@
+$base: #edf3dc;
+$baseDeg: 60deg;
+
+.menu {
+  padding: 0;
+  position: relative;
+  width: 65%;
+  height: 0;
+  padding-top: 65%;
+  transition: 0.7s;
+  transform: rotate(0) scale(0);
+  &.open {
+    transform: rotate(240deg) scale(1.2);
+  }
+}
+
+.menu > * {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.7s;
+  clip-path: url(#sector);
+}
+
+.sectors {
+  transition: 0.7s;
+  &.selected {
+    background-image: radial-gradient(yellow, #f06d06);
+  }
+}
+
+.one {
+  background-color: $base;
+}
+.two {
+  background-color: darken($base, 5%);
+}
+.three {
+  background-color: darken($base, 10%);
+}
+.four {
+  background-color: darken($base, 15%);
+}
+.five {
+  background-color: darken($base, 20%);
+}
+.six {
+  background-color: darken($base, 25%);
+}
+
+.icon {
+  position: absolute;
+  right: 15%;
+  top: 30%;
+  transform: rotate($baseDeg);
+
+  color: darken($base, 60%);
+  font-size: 1.6rem;
+
+  &:last-of-type {
+    font-size: 3rem;
+    right: 10%;
+    top: 20%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .icon {
+    font-size: 1.2rem;
+    &:last-of-type {
+      font-size: 1.4rem;
+    }
+  }
+}
