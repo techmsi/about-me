@@ -10,8 +10,9 @@
     "postbuild": "workbox generateSW"
   },
   "dependencies": {
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "@reach/router": "^1.3.3",
+    "react": "16.x",
+    "react-dom": "16.x",
     "react-icons": "^3.9.0"
   },
   "prettier": {

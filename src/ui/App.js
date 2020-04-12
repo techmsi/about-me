@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+import { Router } from '@reach/router';
+
 import { Sector } from '/ui/Sector';
 import { menuItems } from '/ui/menuItems';
 import { Menu } from '/ui/Menu';
+import { SectorBody } from '/ui/SectorBody';
 
 export const App = () => {
   const [open, setOpen] = useState(true);
@@ -24,6 +27,9 @@ export const App = () => {
           +
         </button>
       </div>
+      <Router>
+        <SectorBody path="sector/:sectorId" />
+      </Router>
 
       <Sector />
     </section>
